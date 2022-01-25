@@ -8,6 +8,7 @@ import NotFound from './Component/NotFound/NotFound';
 import Footer from './Component/Shared/Footer/Footer';
 import AddBlogs from './Component/AddBlog/AddBlogs';
 import AuthProvider from './Contex/AuthProvider'
+import PrivetRoute from './Component/Login/PrivetRoute/PrivetRoute';
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/addBlogs">
+            <PrivetRoute path="/addBlogs">
               <AddBlogs></AddBlogs>
-            </Route>
+            </PrivetRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
