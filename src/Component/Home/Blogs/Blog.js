@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import Rating from 'react-rating'
 
 import './Blog.css'
@@ -25,7 +25,7 @@ const Blog = ({blog}) => {
                 initialRating={blog.Rating}/></span></h3>
                 </div>
                 
-                
+                <Button className='mx-auto mb-3'>Details</Button>
               </Col>
               <Col
                 xs={12}
@@ -34,6 +34,7 @@ const Blog = ({blog}) => {
               >
                 <img src={blog.img} alt="" />
               </Col>
+              
             </Row>
           </Col>
     );

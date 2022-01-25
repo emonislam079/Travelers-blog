@@ -71,7 +71,7 @@ const Registration = () => {
                     </FloatingLabel>
 
                     <div className='form-group text-center'>
-                        <Button type='submit' variant="primary" size="lg">Register</Button>
+                        <Button type='submit' variant="primary">Register</Button>
                         <Link to="/login" className='text-decoration-none d-block fs-5 mt-2 mb-5 text-center'>Already Register? Please Login</Link>
                     </div>
 

@@ -1,0 +1,25 @@
+.Blogs-form {
+  margin: 30px 150px;
+}
+.Blogs-form input {
+  display: block;
+  margin-top: 30px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.error {
+  color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .Blogs-form {
+    margin: 30px 0px;
+  }
+  .Blogs-form input {
+    width: 250px;
+  }
+}

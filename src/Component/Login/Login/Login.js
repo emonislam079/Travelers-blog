@@ -53,9 +53,9 @@ const Login = () => {
                         onBlur={handleOnChange} />
                 </FloatingLabel>
                 <div className='form-group text-center'>
-                    <Button className='text-center' type='submit' variant="primary" size="lg">Login</Button>
+                    <Button className='text-center' type='submit' variant="primary">Login</Button>
                     <Link to="/register" className='text-decoration-none d-block fs-5 mt-2 text-center'>New User? Please Register</Link>
-                    <Button onClick={handleGoogleSignIn} className='mt-4' variant="primary" size="lg"><i className="fab fa-google"></i> Google Sign In</Button>
+                    <Button onClick={handleGoogleSignIn} className='mt-4' variant="primary"><i className="fab fa-google"></i> Google Sign In</Button>
 
                 </div>
             </Form>}
