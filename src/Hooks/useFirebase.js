@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,sendEmailVerification, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, signOut } from "firebase/auth";
 import initializeAuthentication from '../Component/Login/Firebase/firebase.init';
 
 
@@ -21,16 +21,18 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             setAuthError('');
+            
             const newUser = {email, displayName: name}
             setUser(newUser);
             // save user to database
-           
+            
             updateProfile(auth.currentUser, {
                 displayName: name
               }).then(() => {
               }).catch((error) => {
               });
             history.replace('/');
+            emailVerification();
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -38,6 +40,7 @@ const useFirebase = () => {
           // ..
         })
         .finally(() => setIsLoading(false));
+        
     }
 
     const loginUser = (email, password, location, history) => {
@@ -91,6 +94,16 @@ const useFirebase = () => {
           })
           .finally(() => setIsLoading(false));
     }
+     
+    const emailVerification = () =>{
+      sendEmailVerification(auth.currentUser)
+      .then(result=>{
+        
+      });
+    }
+
+
+    
 
 
     return{
@@ -100,7 +113,7 @@ const useFirebase = () => {
         logout,
         isLoading,
         authError, 
-        signInWithGoogle
+        signInWithGoogle,
     }
 };
 
