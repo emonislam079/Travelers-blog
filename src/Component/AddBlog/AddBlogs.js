@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, {useState } from 'react';
 import { Alert, Col, Container} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
@@ -12,7 +12,7 @@ const AddBlogs = () => {
 
         const onSubmit = data => {
             console.log(data);
-              axios.post('http://localhost:5000/blogs', data)
+              axios.post('https://salty-shelf-64141.herokuapp.com/blogs', data)
               .then(res => {
                   if(data?.cost){
                    console.log(data);

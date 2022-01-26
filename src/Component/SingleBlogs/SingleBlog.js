@@ -12,7 +12,7 @@ const SingleBlog = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/blogs/${blogId}`;
+        const url = `https://salty-shelf-64141.herokuapp.com/blogs/${blogId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setblog(data));
@@ -34,6 +34,7 @@ const SingleBlog = () => {
             className='text-success'
             emptySymbol="far fa-star"
             fullSymbol="fas fa-star"
+            readonly
             initialRating={blog.Rating}/></span></h3>
             </div>
             

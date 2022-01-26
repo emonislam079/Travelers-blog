@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Blog from './Blog';
 
 const Blogs = () => {
     const [Blogs, setBlogs]= useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/blogs')
+        fetch('https://salty-shelf-64141.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => setBlogs(data))
     }, [])
