@@ -16,11 +16,7 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={HashLink} to="/home"><i className="fas fa-home"></i> HOME</Nav.Link>
                             <Nav.Link as={HashLink} to="/addBlogs"><i class="fas fa-hotel"></i> ADD YOUR EXPERIENCE</Nav.Link>
-                            <NavDropdown title={<span><i class="fas fa-tachometer-alt"></i> DASHBOARD</span>} id="navbarScrollingDropdown">
-                                <NavDropdown.Item as={HashLink} to="/admin">ADMIN</NavDropdown.Item>
-                                
-                            </NavDropdown>
-                            
+                            <Nav.Link as={HashLink} to="/dashboard"><i class="fas fa-tachometer-alt"></i> DASHBOARD</Nav.Link>             
 
                         </Nav>
                         <Nav>

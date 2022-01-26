@@ -10,6 +10,10 @@ import AddBlogs from './Component/AddBlog/AddBlogs';
 import AuthProvider from './Contex/AuthProvider'
 import PrivetRoute from './Component/Login/PrivetRoute/PrivetRoute';
 import SingleBlog from './Component/SingleBlogs/SingleBlog';
+import Dashboard from './Component/DashBoard/Dashboard';
+import ManageBlogs from './Component/DashBoard/ManageBlogs/ManageBlogs';
+import MakeAdmin from './Component/DashBoard/MakeAdmin/MakeAdmin';
+import AdminBlogs from './Component/DashBoard/AdminBlogs/AdminBlogs';
 
 
 function App() {
@@ -33,6 +37,18 @@ function App() {
             </PrivetRoute>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            <Route path="/manageblogs">
+              <ManageBlogs></ManageBlogs>
+            </Route>
+            <Route path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+            <Route path="/adminblogs">
+              <AdminBlogs></AdminBlogs>
             </Route>
             <Route path="/register">
               <Registration></Registration>

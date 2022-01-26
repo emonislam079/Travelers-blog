@@ -21,10 +21,9 @@ const Blogs = () => {
         })
     }, [page])
 
-
-
     return (
         <Container>
+            <h1 className='fw-bold mt-5 text-primary'>Historical Tour Blogs</h1>
       <Row>
       {
             displayBlogs.map (blog=> <Blog

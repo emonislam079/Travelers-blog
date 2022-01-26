@@ -25,7 +25,7 @@ const useFirebase = () => {
             const newUser = {email, displayName: name}
             setUser(newUser);
             // save user to database
-            
+            saveUser(email, name, 'POST');
             updateProfile(auth.currentUser, {
                 displayName: name
               }).then(() => {
@@ -64,7 +64,7 @@ const useFirebase = () => {
     const destination = location?.state?.from || "/";
      history.replace(destination);
     const user = result.user;
-    
+    saveUser(user.email, user.displayName, 'PUT')
     setAuthError('');
   }).catch((error) => {
     setAuthError(error.message);
@@ -100,6 +100,19 @@ const useFirebase = () => {
       .then(result=>{
         
       });
+    }
+
+
+    const saveUser = (email, displayName, method) => {
+      const user = {email, displayName};
+      fetch('https://salty-shelf-64141.herokuapp.com/users', {
+        method: method,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then()
     }
 
 
