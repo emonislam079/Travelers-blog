@@ -3,11 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Blog from './Blog';
 
 const Blogs = () => {
-    const [Blogs, setblog]= useState([]);
+    const [Blogs, setBlogs]= useState([]);
     useEffect(()=>{
-        fetch('./EventData.JSON')
+        fetch('http://localhost:5000/blogs')
         .then(res => res.json())
-        .then(data => setblog(data))
+        .then(data => setBlogs(data))
     }, [])
     return (
         <Container>

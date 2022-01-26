@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Rating from 'react-rating'
+import { Link } from 'react-router-dom';
 
 import './Blog.css'
 
@@ -25,7 +26,7 @@ const Blog = ({blog}) => {
                 initialRating={blog.Rating}/></span></h3>
                 </div>
                 
-                <Button className='mx-auto mb-3'>Details</Button>
+                <Link to={`/blogs/${blog._id}`}><Button className='mb-3'>Details</Button></Link>
               </Col>
               <Col
                 xs={12}

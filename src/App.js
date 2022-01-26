@@ -9,6 +9,7 @@ import Footer from './Component/Shared/Footer/Footer';
 import AddBlogs from './Component/AddBlog/AddBlogs';
 import AuthProvider from './Contex/AuthProvider'
 import PrivetRoute from './Component/Login/PrivetRoute/PrivetRoute';
+import SingleBlog from './Component/SingleBlogs/SingleBlog';
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <PrivetRoute path="/addBlogs">
               <AddBlogs></AddBlogs>
+            </PrivetRoute>
+            <PrivetRoute path="/blogs/:blogId">
+              <SingleBlog></SingleBlog>
             </PrivetRoute>
             <Route path="/login">
               <Login></Login>
