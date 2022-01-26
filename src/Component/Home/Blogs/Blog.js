@@ -23,6 +23,7 @@ const Blog = ({blog}) => {
                 className='text-success'
                 emptySymbol="far fa-star"
                 fullSymbol="fas fa-star"
+                readonly
                 initialRating={blog.Rating}/></span></h3>
                 </div>
                 

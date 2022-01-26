@@ -2,16 +2,24 @@ import React, { useReducer, useState } from 'react';
 import { Alert, Col, Container} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import axios from 'axios';
 import './AddBlog.css'
 
 const AddBlogs = () => {
     const { register, handleSubmit, reset } = useForm();
-    const [success, setSuccess] = useState(false);
     const {user} = useAuth();
+    const [success, setSuccess] = useState(false);
 
-    const onSubmit = data => {
-        console.log(data);
-        reset();
+        const onSubmit = data => {
+            console.log(data);
+              axios.post('http://localhost:5000/blogs', data)
+              .then(res => {
+                  if(data?.cost){
+                   console.log(data);
+                   setSuccess(true);
+                   reset()
+                  }
+        })
     }
 
     return (
