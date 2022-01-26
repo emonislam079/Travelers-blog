@@ -12,7 +12,7 @@ const SingleBlog = () => {
 
 
     useEffect(() => {
-        const url = `https://salty-shelf-64141.herokuapp.com/blogs/${blogId}`;
+        const url = `http://localhost:5000/blogs/${blogId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setblog(data));

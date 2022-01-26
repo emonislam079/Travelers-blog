@@ -12,7 +12,7 @@ const AddBlogs = () => {
 
         const onSubmit = data => {
             console.log(data);
-              axios.post('https://salty-shelf-64141.herokuapp.com/blogs', data)
+              axios.post('http://localhost:5000/blogs', data)
               .then(res => {
                   if(data?.cost){
                    console.log(data);
