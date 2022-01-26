@@ -6,12 +6,11 @@ const Blogs = () => {
     const [Blogs, setBlogs]= useState([]);
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
-    // products to be rendered on the UI
     const [displayBlogs, setDisplayBlogs] = useState([]);
     const size = 10;
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://salty-shelf-64141.herokuapp.com/blogs?page=${page}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
           setBlogs(data.Blogs);
