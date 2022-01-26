@@ -5,7 +5,7 @@ import useAuth from '../../../Hooks/useAuth';
 import "./Header.css"
 
 const Header = () => {
-    const { user, logout } = useAuth();
+    const { user, logout, admin } = useAuth();
     return (
         <div className='header'>
             <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
@@ -16,7 +16,8 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={HashLink} to="/home"><i className="fas fa-home"></i> HOME</Nav.Link>
                             <Nav.Link as={HashLink} to="/addBlogs"><i class="fas fa-hotel"></i> ADD YOUR EXPERIENCE</Nav.Link>
-                            <Nav.Link as={HashLink} to="/dashboard"><i class="fas fa-tachometer-alt"></i> DASHBOARD</Nav.Link>             
+                            {admin && <Nav.Link as={HashLink} to="/dashboard"><i class="fas fa-tachometer-alt"></i> DASHBOARD</Nav.Link>}
+                                         
 
                         </Nav>
                         <Nav>
