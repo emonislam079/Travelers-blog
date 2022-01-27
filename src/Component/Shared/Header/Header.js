@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
 import "./Header.css"

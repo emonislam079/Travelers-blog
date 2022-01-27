@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import {Nav } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 
 const Dashboard = () => {

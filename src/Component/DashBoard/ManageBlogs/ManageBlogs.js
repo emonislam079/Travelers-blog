@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Nav, Row } from 'react-bootstrap';
+import { Button, Nav, Row } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import ManageBlog from './ManageBlog';
 
