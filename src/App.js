@@ -14,6 +14,7 @@ import Dashboard from './Component/DashBoard/Dashboard';
 import ManageBlogs from './Component/DashBoard/ManageBlogs/ManageBlogs';
 import MakeAdmin from './Component/DashBoard/MakeAdmin/MakeAdmin';
 import AdminBlogs from './Component/DashBoard/AdminBlogs/AdminBlogs';
+import ApprovedBlog from './Component/DashBoard/ApprovedBlogs/ApprovedBlog';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
             </Route>
             <Route path="/manageblogs">
               <ManageBlogs></ManageBlogs>
+            </Route>
+            <Route path="/approvedblogs">
+              <ApprovedBlog></ApprovedBlog>
             </Route>
             <Route path="/makeadmin">
               <MakeAdmin></MakeAdmin>

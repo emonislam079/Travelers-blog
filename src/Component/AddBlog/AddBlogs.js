@@ -12,7 +12,7 @@ const AddBlogs = () => {
 
         const onSubmit = data => {
             console.log(data);
-              axios.post('https://salty-shelf-64141.herokuapp.com/blogs', data)
+              axios.post('https://salty-shelf-64141.herokuapp.com/usersblogs', data)
               .then(res => {
                   if(data?.cost){
                    console.log(data);
@@ -47,7 +47,7 @@ const AddBlogs = () => {
                 <input type="submit" />
                 </form>
             </div>
-            {success && <Alert severity="success">Blog Added</Alert>}
+            {success && <Alert severity="success">Blog Added. An Admin Will Approve Soon</Alert>}
             
         </Col>
         </Container>
