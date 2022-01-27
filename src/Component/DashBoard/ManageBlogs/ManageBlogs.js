@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Nav, Row } from 'react-bootstrap';
+import { Button, Col, Nav, Row } from 'react-bootstrap';
+import Rating from 'react-rating';
 import { HashLink } from 'react-router-hash-link';
-import ManageBlog from './ManageBlog';
 
 const ManageBlogs = () => {
     const [Blogs, setBlogs]= useState([]);
@@ -21,6 +21,23 @@ const ManageBlogs = () => {
               setPageCount(pageNumber);
         })
     }, [page])
+
+    const handelDelete = id =>{
+        const url = `https://salty-shelf-64141.herokuapp.com/blogs/${id}`;
+        fetch(url, {
+          method: 'DELETE'
+        })
+        .then (res => res.json())
+        .then (data =>{
+            if(data.deletedCount){
+                alert('Want to Delete Blog')
+                const remaining = displayBlogs.filter(blog => blog._id !==id);
+                setDisplayBlogs(remaining);
+            }
+          
+        })
+      } 
+
     return (
         <div className='container'>
             <div className='row mt-5'>
@@ -38,10 +55,40 @@ const ManageBlogs = () => {
             <h1 className='fw-bold text-primary'>Manage Blogs</h1>
       <Row>
       {
-            displayBlogs.map (blog=> <ManageBlog
+            displayBlogs.map (blog=> <div
             key={blog.id}
             blog={blog}
-            ></ManageBlog>)
+            ><Col xs={12} md={12} className="Blogs-box p-3">
+            <Row>
+              <Col xs={12} md={8} className="Blogs-text ps-4">
+                <div>
+                  <h4 className='text-start text-secondary mt-3'>{blog.PersonName}</h4>
+                  <h3 className="fs-1 text-success">{blog.date} <small className="text-success fs-4 ">{blog.month}</small></h3>
+                  <h1 className='text-start'>{blog.name}</h1>
+                  <h6 className="text-secondary"> <i class="fas fa-map-marker-alt"></i> {blog.location}</h6>
+                <hr />
+                <p>{blog.details}</p>
+                <h4 className='text-start'>Rating :  
+                <Rating 
+                className='text-success'
+                emptySymbol="far fa-star"
+                fullSymbol="fas fa-star"
+                readonly
+                initialRating={blog.Rating}/></h4>
+                <Button>Update</Button> <Button onClick={()=> handelDelete(blog._id)}>Delete</Button>
+                </div>
+                
+              </Col>
+              <Col
+                xs={12}
+                md={4}>
+                <img src={blog.img} alt="" />
+              </Col>
+              
+            </Row>
+          </Col>
+
+            </div>)
         }
           
       </Row>
