@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            
+            <TopRated></TopRated>
            <Blogs></Blogs>
 
         </div>
